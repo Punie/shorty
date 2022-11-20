@@ -5,6 +5,14 @@ const config = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  rewrites: async () => {
+    return [
+      {
+        source: '/:shortUrl',
+        destination: '/api/:shortUrl',
+      },
+    ];
+  },
 };
 
 export default config;

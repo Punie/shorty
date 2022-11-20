@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# local DB
+*.sqlite
+*.sqlite-journal
+
 # next.js
 /.next/
 /out/
