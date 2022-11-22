@@ -1,3 +1,5 @@
+import ReactQueryProvider from '~components/ReactQueryProvider';
+
 import '~styles/globals.css';
 
 export default function RootLayout({
@@ -8,7 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="grid min-h-screen place-items-center">{children}</body>
+      <body className="min-h-screen bg-slate-100 text-slate-800 antialiased">
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
