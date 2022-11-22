@@ -1,17 +1,19 @@
-/** @type {import("prettier").Config} */
+/** @type {import("prettier").Config & import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 module.exports = {
   arrowParens: 'avoid',
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
   importOrder: ['<THIRD_PARTY_MODULES>', '^~', '^[.]{2}[/]', '^[.][/]'],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
+  importOrderBuiltinModulesToTop: true,
+  importOrderCaseInsensitive: false,
+  importOrderParserPlugins: ['jsx', 'typescript'],
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
   plugins: [
-    require.resolve('@ianvs/prettier-plugin-sort-imports'),
-    require.resolve('prettier-plugin-prisma'),
-    require.resolve('prettier-plugin-tailwindcss'),
+    require('@ianvs/prettier-plugin-sort-imports'),
+    require('prettier-plugin-prisma'),
   ],
 };
