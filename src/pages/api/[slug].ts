@@ -17,7 +17,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const { slug } = query.data;
 
-  const knownUrl = await db.url.findUnique({
+  const knownUrl = await db.url.update({
+    data: { clicks: { increment: 1 } },
     where: { slug },
     select: { url: true },
   });
